@@ -8,14 +8,6 @@ All AI are running on client side, need 10\~20s to load it first time.
 - <https://robinfwu.github.io/santorini/santorini.html>
 - <https://cestpasphoto.github.io/santorini_with_gods.html>
 
-**Santorini**
-- <https://cestpasphoto.github.io/splendor.html>
-- <https://cestpasphoto.github.io/splendor_3pl.html>
-- <https://cestpasphoto.github.io/splendor_4pl.html>
-
-**Wordle**
-- <https://cestpasphoto.github.io/pyodide_wordle.html>
-
 ## Online Santorini AI
 
 This AI is based on AlphaZero training. I have reused an existing training engine and significantly modified it, I fully implemented everything else from game logic, ML network design, training tuning, port to browser and JS/HTML interface.
