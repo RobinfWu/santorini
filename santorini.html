@@ -11,6 +11,22 @@
   <script src="./common/game.js"></script>
   <script src="./santorini/main.js"></script>
   <style>
+    body {
+      background-color: #73CFEA; /* Blue background for the page */
+    }
+
+    td {
+      background-color: #BBE5AB; /* Grey background for the cells */
+      border: 5px solid white; /* White border for the cells */
+    }
+
+    .ui.table td div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
     .ui.table tbody tr td.selectable {
       background-color: #f3f8ff;
     }
@@ -18,35 +34,6 @@
     .ui.table tbody tr td.selectable:hover {
       background-color: #e8f1ff;
     }
-
-    	body {
-    background-color: #007bff; /* Blue background for the page */
-  }
-
-  .ui.table {
-    table-layout: fixed; /* Fixed table layout */
-    width: 100%; /* Full width of its container */
-  }
-
-  .ui.table td {
-    background-color: grey; /* Grey background for the cells */
-    border: 5px solid white; /* White border for the cells */
-    width: 20%; /* Equal width for each cell */
-    padding-top: 20%; /* Padding-top equal to width for square cells */
-    position: relative; /* Relative positioning for centered content */
-  }
-
-  .ui.table td div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Full width of the cell */
-    height: auto; /* Height to be auto to maintain content aspect */
-  }
   </style>
 </head>
 </head>
