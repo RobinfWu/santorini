@@ -6,7 +6,7 @@ from SantoriniConstants import _decode_action, _encode_action
 # 1: 2x2 workers set at a random position before 1st move
 # 2: No worker pre-set, each player has to chose their position
 # Don't forget to update NB_GODS in SantoriniConstants.py
-INIT_METHOD = 1
+INIT_METHOD = 0
 
 def observation_size():
 	return (25, 3) # True size is 5,5,3 but other functions expects 2-dim answer
