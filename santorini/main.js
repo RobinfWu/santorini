@@ -9,8 +9,8 @@
 
 const directions_char = ['↖', '↑', '↗', '←', 'Ø', '→', '↙', '↓', '↘'];
 
-const green = '#21BA45';
-const red   = '#DB2828';
+const beige = '#D3B5A9';
+const blue   = '#86C9E8';
 
 const list_of_files = [
   ['santorini/Game.py', 'Game.py'],
@@ -51,9 +51,9 @@ function generateSvg(nb_levels, worker) {
   const width = 240, height = 240, level_height = 40, level_shrink_x = 30;
   let style = 'style=""';
   if (worker > 0) {
-    style = `style="fill: ${green};"`;
+    style = `style="fill: ${beige};"`;
   } else if (worker < 0) {
-    style = `style="fill: ${red};"`;
+    style = `style="fill: ${blue};"`;
   }
 
   let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xml:space="preserve">`;
@@ -94,7 +94,7 @@ class Santorini extends AbstractGame {
     this.validMoves = Array(2*NB_GODS*9*9); this.validMoves.fill(false);
     this.lastMove = -1;
     this.powers = [0, 0];       // Which power each player has
-    this.powers_data = [0, 0];  // Which data stored in power position
+    this.powers_data = [0, 0];  // Which data stoblue in power position
     this.cellsOfLastMove = [];
   }
 
@@ -387,8 +387,8 @@ function refreshBoard() {
       // generateSvg deals with nb of levels, dome, worker and color
       cell_content = '<div class="ui middle aligned tiny image">';
       if (game.has_changed_on_last_move([y,x])) {
-        // Since dot only shows for AI, making it red if human is P0 else green
-        let dotColor = game.is_human_player(0) ? 'red' : 'green';
+        // Since dot only shows for AI, making it blue if human is P0 else green
+        let dotColor = game.is_human_player(0) ? 'blue' : 'green';
         cell_content += `<div class="ui tiny ${dotColor} corner empty circular label"></div>`;
       }
       cell_content += generateSvg(level, worker) + '</div>';
@@ -414,17 +414,17 @@ function refreshButtons(loading=false) {
     // Loading
     allBtn.style = "display: none";
     loadingBtn.style = "";
-    allBtn.classList.remove('green', 'red');
+    allBtn.classList.remove('green', 'blue');
   } else if (move_sel.editMode > 0) {
     editMsg.classList.remove('hidden');
     allBtn.style = "display: none";
-    allBtn.classList.remove('green', 'red');
+    allBtn.classList.remove('green', 'blue');
 
-    editBtn.classList.remove('secondary', 'primary', 'red');
+    editBtn.classList.remove('secondary', 'primary', 'blue');
     if (move_sel.editMode == 1) {
       editBtn.classList.add('secondary');
     } else if (move_sel.editMode == 2) {
-      editBtn.classList.add('primary', 'red');
+      editBtn.classList.add('primary', 'blue');
     }
   } else {
     allBtn.style = "";
@@ -432,10 +432,10 @@ function refreshButtons(loading=false) {
     if (game.is_ended()) {
       // Game is finished, looking for the winner
       console.log('End of game');
-      allBtn.classList.add((game.gameEnded[0]>0) ? 'green' : 'red');
+      allBtn.classList.add((game.gameEnded[0]>0) ? 'green' : 'blue');
     } else {
       // Ongoing game
-      allBtn.classList.remove('green', 'red');
+      allBtn.classList.remove('green', 'blue');
       if (game.py.get_last_action() == null && move_sel.stage <= 0) {
         undoBtn.classList.add('disabled');
       } else {
@@ -463,7 +463,7 @@ function refreshButtons(loading=false) {
     }
 
     editMsg.classList.add('hidden');
-    editBtn.classList.remove('secondary', 'primary', 'red');
+    editBtn.classList.remove('secondary', 'primary', 'blue');
   }
 }
 
